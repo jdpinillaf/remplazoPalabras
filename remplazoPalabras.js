@@ -1,4 +1,4 @@
-<script>
+
   try{
   document.addEventListener('DOMContentLoaded', function() {
     alert('El script está corriendo');
@@ -85,5 +85,3 @@
     alert('No se pudo iniciar el script')
     console.log('Error no se pudo iniciar')
   }
-  // Espera a que el contenido del DOM esté completamente cargado
-</script>
