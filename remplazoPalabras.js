@@ -1,5 +1,4 @@
-
-  try{
+try{
   document.addEventListener('DOMContentLoaded', function() {
     alert('El script está corriendo');
     function replaceTextsInFontTags() {
@@ -40,14 +39,13 @@
         }
       }
 
-      // Función para manejar y reemplazar el texto en un nodo de texto
-      function handleText(textNode) {
+     function handleText(textNode) {
         let text = textNode.nodeValue;
         let originalText = text;
         let found = false;
 
         for (const [original, replacement] of Object.entries(replacements)) {
-          const regex = new RegExp(original, 'g');
+          const regex = new RegExp(original, 'gi');
           if (regex.test(text)) {
             console.log(`Texto encontrado: "${original}" en el nodo de texto: "${text}"`);
             found = true;
@@ -62,10 +60,8 @@
       }
     }
 
-    // Ejecuta el reemplazo inicial después de un retraso para permitir que GTranslate traduzca
-    setTimeout(replaceTextsInFontTags, 3000); // Ajusta el retraso si es necesario
+    setTimeout(replaceTextsInFontTags, 7000);
 
-    // Configura un MutationObserver para detectar y reemplazar cambios en el DOM
     const observer = new MutationObserver(function(mutations) {
       mutations.forEach(function(mutation) {
         if (mutation.type === 'childList' || mutation.type === 'characterData') {
@@ -74,14 +70,13 @@
       });
     });
 
-    // Inicia la observación del cuerpo del documento
     observer.observe(document.body, {
       childList: true,
       subtree: true,
       characterData: true
     });
   });
-  }catch(e){
-    alert('No se pudo iniciar el script')
-    console.log('Error no se pudo iniciar')
-  }
+} catch(e){
+  alert('No se pudo iniciar el script');
+  console.log('Error no se pudo iniciar');
+}
