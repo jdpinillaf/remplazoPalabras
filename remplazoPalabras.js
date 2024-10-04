@@ -1,6 +1,5 @@
 try{
   document.addEventListener('DOMContentLoaded', function() {
-    alert('El script está corriendo');
     function replaceTextsInFontTags() {
       const replacements = {
         'Envío Directo': 'Dropshipper',
@@ -77,6 +76,5 @@ try{
     });
   });
 } catch(e){
-  alert('No se pudo iniciar el script');
   console.log('Error no se pudo iniciar');
 }
